@@ -1,36 +1,37 @@
-# Parallel Analysis of Simpsons Dialogues (Java)
+# Παράλληλη Ανάλυση Διαλόγων Simpsons (Java)
 
-This project extracts statistical information from the *Simpsons* TV series using multithreaded processing in Java.
+Το project αυτό εξάγει στατιστικά στοιχεία από τη σειρά *Simpsons* με χρήση πολυνηματικής επεξεργασίας σε Java.
 
-The input dataset (`simpsons_script_lines.csv`) contains dialogue lines from all episodes, including information such as episode, speaking character, location, and dialogue text.
+Το αρχείο εισόδου (`simpsons_script_lines.csv`) περιέχει διαλόγους από όλα τα επεισόδια, μαζί με πληροφορίες όπως επεισόδιο, χαρακτήρα, τοποθεσία και κείμενο.
 
-The program loads the dataset into memory and processes it in parallel using k threads.
+Το πρόγραμμα φορτώνει τα δεδομένα στη μνήμη και τα επεξεργάζεται παράλληλα χρησιμοποιώντας k νήματα.
 
-## 📚 Information
-- Course: PLH 47
-- Assignment: Parallel Simpsons Dataset Analysis
-- Language: Java
+## 📚 Πληροφορίες
+- Μάθημα: (συμπλήρωσε)
+- Υποεργασία: Ανάλυση Διαλόγων Simpsons
+- Γλώσσα: Java
+- Φοιτητής: (το όνομά σου)
 
-## 📝 Description
+## 📝 Περιγραφή
 
-The program reads all lines from the file `simpsons_script_lines.csv` into an array.  
-Then, k threads (where k is a power of 2) are created, each responsible for processing a portion of the dataset.
+Το πρόγραμμα διαβάζει όλες τις γραμμές του αρχείου `simpsons_script_lines.csv` σε έναν πίνακα.  
+Στη συνέχεια δημιουργεί k νήματα (όπου k είναι δύναμη του 2), με κάθε νήμα να επεξεργάζεται ένα τμήμα των δεδομένων.
 
-The following statistics are computed:
+Υπολογίζονται τα παρακάτω:
 
-1. The episode with the highest total number of spoken words  
-2. The location with the largest number of dialogue exchanges  
-3. For each of the characters **Bart**, **Homer**, **Marge**, and **Lisa**:
-   - The most frequently used word (with length ≥ 5 characters)
-   - The number of times that word appears
+1. Το επεισόδιο με το μεγαλύτερο συνολικό πλήθος λέξεων στους διαλόγους  
+2. Η τοποθεσία όπου έλαβαν χώρα οι περισσότερες στιχομυθίες  
+3. Για κάθε έναν από τους χαρακτήρες **Bart**, **Homer**, **Marge** και **Lisa**:
+   - Η πιο συχνή λέξη (μήκους ≥ 5 χαρακτήρων)
+   - Πόσες φορές εμφανίζεται
 
-HashMaps are used to aggregate intermediate results, which are later merged into global structures.
+Για τη συγκέντρωση των αποτελεσμάτων χρησιμοποιούνται HashMaps, ενώ τα μερικά αποτελέσματα κάθε νήματος συγχωνεύονται στο τέλος.
 
-The program also measures execution time for different thread counts.
+Το πρόγραμμα μετρά επίσης τον χρόνο εκτέλεσης για διαφορετικό πλήθος νημάτων.
 
-## 🛠️ Technologies
+## 🛠️ Τεχνολογίες
 - Java
 - Java Threads
-- CSV file processing
+- Επεξεργασία CSV
 - HashMap / ConcurrentHashMap
-- System.nanoTime() for performance measurements
+- System.nanoTime() για μετρήσεις χρόνου
